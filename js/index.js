@@ -64,9 +64,11 @@ function addBooksFromNavBar() {
       getData(`books/${id}`, configObj).then(data => {
          let uList = document.querySelector("#userList")
          let li = document.createElement("li")
-
          li.textContent = data.users[data.users.length - 1].username
+
          uList.appendChild(li)
+
+         uList.parentElement.querySelector("button").textContent = "Unlike"
       })
    }
    div.append(img, pTitle, pAuthor, pDescr, ul, button)
